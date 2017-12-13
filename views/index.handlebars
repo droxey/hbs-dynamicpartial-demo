@@ -6,7 +6,7 @@
 </div>
 <div class="row">
   <div class="col-4">
-    <ul id="employees">
+    <ul id="employees" class="list-group">
       {{#each employees}}
         {{showSnippet 'listitem' this}}
       {{/each}}
@@ -16,15 +16,15 @@
     <form id="employee-form" method="POST" action="/snippets/listitem" class="create-form">
       <div class="form-group">
         <label for="username">Username:</label>
-        <input type="text" id="username" name="username" placeholder="enter a username&hellip;" class="form-control" required>
+        <input type="text" id="username" name="username" placeholder="enter a username&hellip;" class="form-control" tabindex="1" required>
       </div>
       <div class="form-group">
         <label for="role">Role:</label>
-        <input type="text" id="role" name="role" placeholder="enter a role&hellip;" class="form-control" required>
+        <input type="text" id="role" name="role" placeholder="enter a role&hellip;" class="form-control" tabindex="1" required>
       </div>
       <div class="form-group">
         <label for="company">Company:</label>
-        <input type="text" id="company" name="company" placeholder="enter a company&hellip;" class="form-control" required>
+        <input type="text" id="company" name="company" placeholder="enter a company&hellip;" class="form-control" tabindex="1" required>
       </div>
       <button type="submit">Add Employee</button>
     </form>

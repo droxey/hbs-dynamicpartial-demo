@@ -9,6 +9,9 @@ const snippetsDirectory = 'views/snippets/';
 /** Initialize Express app. */
 let app = express();
 
+/** Serve static content for the app from the "public" directory. */
+app.use(express.static("public"));
+
 /** Setup bodyParser. */
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -21,7 +24,6 @@ let routes = require("./controllers/controller.js");
 app.use("/", routes);
 
 /** Create handlebars partials for each item in /views/snippets. */
-
 fs.readdirSync(snippetsDirectory).forEach(function(snippet) {
   var fileContents = fs.readFileSync(snippetsDirectory + snippet, 'utf8');
   var compiledTemplate = hbs.compile(fileContents);
@@ -31,8 +33,8 @@ fs.readdirSync(snippetsDirectory).forEach(function(snippet) {
 
 /** Create 'showSnippet' helper that acts as a dynamic partial. */
 hbs.registerHelper('showSnippet', function(slug, context, opts) {
-    var loadedPartial = hbs.partials[slug];
-    return new hbs.SafeString(loadedPartial(context));
+  var loadedPartial = hbs.partials[slug];
+  return new hbs.SafeString(loadedPartial(context));
 });
 
 /** Listen on specified port. */

@@ -12,17 +12,5 @@
 		</div>
 	</body>
 	<script src="https://code.jquery.com/jquery.js"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
-      $(document).on("submit", "#employee-form", function(event) { 
-				event.preventDefault();
-				
-				var submitUrl = $(this).attr('action');
-				$.post(submitUrl, function(renderedPartial) {
-					console.log(renderedPartial);
-					$('#employees').prepend(renderedPartial);
-				});
-			});
-    });
-  </script>
+  <script src="js/employees.js"></script>
 </html>
