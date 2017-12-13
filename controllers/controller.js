@@ -35,6 +35,7 @@ router.post("/snippets/:slug", function(req, res) {
       error: 'Snippet with name "' + slug + '" not found.' 
     });
   }
+  
   /** Save the POST body in a new object and add it to employeeData. */
   var newEmployee = {
     name: req.body.username,
@@ -45,9 +46,7 @@ router.post("/snippets/:slug", function(req, res) {
   employeeData.push(newEmployee);
   
   /** Render the partial. */
-  res.render('snippets/' + slug, {
-     employee: newEmployee
-  });
+  res.send(loadedPartial(newEmployee));
 });
 
 
