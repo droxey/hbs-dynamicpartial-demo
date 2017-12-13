@@ -20,14 +20,7 @@
 				var submitUrl = $(this).attr('action');
 				$.post(submitUrl, function(renderedPartial) {
 					console.log(renderedPartial);
-					/*
-						TODO: Prepend partial to list.
-						
-						Uncomment this once renderedPartial only prints 
-						the <li> element and it's contents.
-					*/
-				
-					//$('#employees').prepend(renderedPartial);
+					$('#employees').prepend(renderedPartial);
 				});
 			});
     });
