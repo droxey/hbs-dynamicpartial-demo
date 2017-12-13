@@ -14,14 +14,20 @@
 	<script src="https://code.jquery.com/jquery.js"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-			console.log('hi')
       $(document).on("submit", "#employee-form", function(event) { 
 				event.preventDefault();
 				
 				var submitUrl = $(this).attr('action');
-				
 				$.post(submitUrl, function(renderedPartial) {
 					console.log(renderedPartial);
+					/*
+						TODO: Prepend partial to list.
+						
+						Uncomment this once renderedPartial only prints 
+						the <li> element and it's contents.
+					*/
+				
+					//$('#employees').prepend(renderedPartial);
 				});
 			});
     });

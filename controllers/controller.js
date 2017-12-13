@@ -46,7 +46,6 @@ router.post("/snippets/:slug", function(req, res) {
   
   /** Render the partial. */
   res.render('snippets/' + slug, {
-     slug: slug,
      employee: newEmployee
   });
 });
