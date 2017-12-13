@@ -1,0 +1,32 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-3">Dynamically Rendered Snippets</h1>
+    <p class="lead">Demonstrates the use of "dynamic partials" to render snippets of a handlebars template.</p>
+  </div>
+</div>
+<div class="row">
+  <div class="col-4">
+    <ul id="employees">
+      {{#each employees}}
+        {{showSnippet 'listitem' this}}
+      {{/each}}
+    </ul>
+  </div>
+  <div class="col-8">
+    <form id="employee-form" method="POST" action="/snippets/listitem" class="create-form">
+      <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="enter a username&hellip;" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="role">Role:</label>
+        <input type="text" id="role" name="role" placeholder="enter a role&hellip;" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="company">Company:</label>
+        <input type="text" id="company" name="company" placeholder="enter a company&hellip;" class="form-control" required>
+      </div>
+      <button type="submit">Add Employee</button>
+    </form>
+  </div>
+</div>
