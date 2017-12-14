@@ -24,7 +24,6 @@ router.get("/", function(req, res) {
  * @name PostAndReturnSnippet
  * @route {POST} /snippets/:slug
  * @routeparam {String} :slug is the file name of the snippet to load.
- * @routeparam {String} :key is the optional key to fetch from employeeData
  */
 router.post("/snippets/:slug", function(req, res) {
   /** Load the partial. */
